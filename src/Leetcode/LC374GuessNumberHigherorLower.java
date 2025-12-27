@@ -1,4 +1,4 @@
-package arrays;
+package Leetcode;
 
 public class LC374GuessNumberHigherorLower {
     /**

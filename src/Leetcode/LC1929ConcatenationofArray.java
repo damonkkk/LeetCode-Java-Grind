@@ -1,4 +1,4 @@
-package arrays;
+package Leetcode;
 
 public class LC1929ConcatenationofArray {
     public int[] getConcatenation(int[] nums) {

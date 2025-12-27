@@ -1,4 +1,4 @@
-package arrays;
+package Leetcode;
 
 // class Solution {
 //     public boolean isAnagram(String s, String t) {

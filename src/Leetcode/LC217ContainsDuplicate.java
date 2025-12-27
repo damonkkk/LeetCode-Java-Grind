@@ -1,4 +1,4 @@
-package arrays;
+package Leetcode;
 import java.util.*;
 
 public class LC217ContainsDuplicate {
