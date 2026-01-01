@@ -1,7 +1,7 @@
 package Review;
 import java.util.HashMap;
 
-public class MaxCharFrequency {
+public class Q1MaxCharFrequency {
 
     /**
      * 题目要求：
@@ -13,6 +13,11 @@ public class MaxCharFrequency {
      * "aabcA" -> 返回 2 (因为 'a' 出现了 2 次，'b','c','A' 各 1 次)
      */
     public int findMaxOccurrence(String s) {
+
+        if(s==null || s.isEmpty()){
+            return  0;
+        }
+
         HashMap<Character,Integer> map = new HashMap<>();
         char[] o =  s.toCharArray();
 
@@ -65,7 +70,7 @@ public class MaxCharFrequency {
 //    }
 
     public static void main(String[] args) {
-        MaxCharFrequency solution = new MaxCharFrequency();
+        Q1MaxCharFrequency solution = new Q1MaxCharFrequency();
 
         // testing
         String test1 = "aaa";
