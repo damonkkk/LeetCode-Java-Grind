@@ -14,8 +14,29 @@ public class Q1MajorityElement {
      * [2, 2, 1, 1, 1, 2, 2] -> returns 2
      */
     public int findMajority(int[] nums) {
-        // TODO: Write your logic here
-        return -1;
+        if(nums==null){
+            return -1;
+        }
+        HashMap<Integer,Integer> map = new HashMap<>();
+        int max = 0;
+        int result = 0;
+        for (int c: nums){
+            map.put(c, map.getOrDefault(c, 0) + 1);
+            if(map.get(c) >= max){
+                max = map.get(c);
+            }
+        }
+        for (int i = 0; i <nums.length-1;i++){
+            if(map.get(nums[i])>map.get(nums[i+1])){
+                result = nums[i];
+            }
+        }
+
+
+        return result;
+
+
+
     }
 
     public static void main(String[] args) {

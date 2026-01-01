@@ -1,5 +1,8 @@
 package Review;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Q1CountDigits {
 
     /**
@@ -12,8 +15,21 @@ public class Q1CountDigits {
      * "1a2b3c" -> returns 3
      */
     public int countDigits(String s) {
-        // TODO: Write your logic here
-        return 0;
+        if(s == null || s.isEmpty()){
+            return 0;
+        }
+        char[] s1 = s.toCharArray();
+        int count = 0;
+
+        for(int i = 0; i <=s.length()-1; i++){
+            if(Character.isDigit(s1[i])){
+                count++;
+            }
+
+
+        }
+
+        return count;
     }
 
     public static void main(String[] args) {
