@@ -1,4 +1,4 @@
-package Review;
+package Review.Q1;
 import java.util.HashMap;
 
 public class Q1MaxCharFrequency {

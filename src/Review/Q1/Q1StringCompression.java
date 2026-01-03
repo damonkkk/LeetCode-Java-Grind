@@ -1,6 +1,4 @@
-package Review;
-
-import java.util.HashMap;
+package Review.Q1;
 
 public class Q1StringCompression {
 

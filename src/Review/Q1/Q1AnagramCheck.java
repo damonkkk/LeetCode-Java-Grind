@@ -1,6 +1,5 @@
-package Review;
+package Review.Q1;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class Q1AnagramCheck {

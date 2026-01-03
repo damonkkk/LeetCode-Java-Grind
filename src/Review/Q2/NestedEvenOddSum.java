@@ -1,4 +1,4 @@
-package Review;
+package Review.Q2;
 
 import java.util.*;
 
@@ -17,8 +17,29 @@ public class NestedEvenOddSum {
      * 3. Zero (0) is considered an even number.
      */
     public List<List<Integer>> calculateSums(List<List<Integer>> input) {
-        // TODO: Implement logic
-        return null;
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+
+        int oddSum = 0;
+        int evenSum = 0;
+        for(int i = 0; i<=input.size()-1; i++){
+            if(input.get(i) == null || input.get(i).isEmpty()){
+                result.add(Arrays.asList(0,0));
+                continue;
+            }
+            for(int j = 0; j<=input.get(i).size()-1;j++){
+                if(input.get(i).get(j) %2 == 0){
+                    evenSum += input.get(i).get(j);
+                } else {
+                    oddSum += input.get(i).get(j);
+                }
+            }
+            result.add(Arrays.asList(evenSum,oddSum));
+            evenSum =0;
+            oddSum=0;
+
+        }
+
+        return result;
     }
 
     public static void main(String[] args) {
@@ -30,6 +51,7 @@ public class NestedEvenOddSum {
                 Arrays.asList(-1, -4, 0),
                 new ArrayList<>() // Empty list case
         );
+
 
         System.out.println("Test 1: " + sol.calculateSums(test1));
         // Expected: [[2, 8], [14, 5], [-4, -1], [0, 0]]

@@ -1,7 +1,4 @@
-package Review;
-
-import java.util.HashMap;
-import java.util.Map;
+package Review.Q1;
 
 public class Q1CountDigits {
 
