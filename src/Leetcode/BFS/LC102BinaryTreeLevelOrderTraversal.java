@@ -16,7 +16,7 @@ public class LC102BinaryTreeLevelOrderTraversal {
           this.left = left;
           this.right = right;
       }
-  }
+       }
 
 
 
@@ -31,7 +31,7 @@ public class LC102BinaryTreeLevelOrderTraversal {
 
         while (!q.isEmpty()) {
             int size = q.size();
-            List<Integer> list = new ArrayList<>(size);
+            List<Integer> list = new ArrayList<>();
 
             for (int i = 0; i < size; i++) {
                 TreeNode current = q.poll();
