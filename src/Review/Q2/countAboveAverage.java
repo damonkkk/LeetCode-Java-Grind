@@ -1,5 +1,6 @@
 package Review.Q2;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class countAboveAverage {
@@ -17,6 +18,9 @@ public class countAboveAverage {
      */
     public List<Integer> countAboveAverage(List<List<Integer>> input) {
         // TODO: Implement logic
+        ArrayList<Integer> result = new ArrayList<>();
+
+
         return null;
     }
 // Test Case: {{10, 20, 30}, {5, 5, 5}, {1, 100}} -> Expected: {1, 0, 1}
