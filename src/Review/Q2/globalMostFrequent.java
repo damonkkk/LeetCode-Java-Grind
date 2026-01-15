@@ -17,7 +17,7 @@ public class globalMostFrequent {
      */
     public int globalMostFrequent(List<List<Integer>> input) {
         if(input==null || input.isEmpty()){
-            return 0;
+            return -1;
         }
         HashMap<Integer,Integer> map = new HashMap<>();
         for(List<Integer> list: input){
