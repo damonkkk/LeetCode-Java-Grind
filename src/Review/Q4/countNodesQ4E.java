@@ -10,25 +10,33 @@ import java.util.function.Predicate;
 //Example: If the predicate is x -> x % 2 == 0, count all even nodes.
 //Key Skill: Calling condition.test(node.val).
 public class countNodesQ4E {
+    // global count initialised
     private int count = 0;
     public int countNodes(TreeNode root, Predicate<Integer> condition){
+        // check if root == null,if yes return 0 as no valid condition appears
         if(root==null){
             return  0;
         }
+        // very time run the dfs, we reset count,that don't affect the reset of runs
         count = 0;
+        // recursive steps
         dfs(root,condition);
         return count;
     }
 
     private void dfs(TreeNode node, Predicate<Integer> condition){
+        // if the current node is not null
         if(node != null) {
+            // if the condition.test() is true regards the current node's value, count +1
             if (condition.test(node.val)) {
                 count++;
             }
 
+            // if the node's left node's value is not null, pass it to recursive call to check if it meets the condition
             if (node.left != null) {
                 dfs(node.left, condition);
             }
+            // if the node's right node's value is not null, pass it to recursive call to check if it meets the condition
             if (node.right != null) {
                 dfs(node.right, condition);
             }
