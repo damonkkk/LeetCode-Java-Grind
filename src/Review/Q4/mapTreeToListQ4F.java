@@ -13,26 +13,33 @@ import java.util.function.Function;
 //Key Skill: Calling mapper.apply(node.val).
 public class mapTreeToListQ4F {
     public List<String> mapTreeToList(TreeNode root, Function<Integer, String> mapper){
+        // instead OF GLOBAL, use local to void the accumulate  result
         ArrayList<String> result = new ArrayList<>();
+        // check null condition
         if(root== null){
             return result;
         }
+        //recursive step
         dfs(root,mapper,result);
         return result;
     }
 
+    // recursive function, 3 arguments: current node, function to be evaluated, result list to be updated
     private void dfs(TreeNode node, Function<Integer, String> mapper, List<String> result){
+        // check null, if null return nothing
         if(node == null){
             return;
         }
+        // traverse in order so from left to middle to right
+        // recursive left node value if it is not null
         if(node.left !=null){
             dfs(node.left,mapper,result);
 
         }
-
+        // mind recursive for middle node
         result.add(mapper.apply(node.val));
 
-
+        // recursive right node value if it is not null
         if(node.right !=null){
             dfs(node.right,mapper,result);
         }
