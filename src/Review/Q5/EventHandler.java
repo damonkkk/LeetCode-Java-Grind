@@ -1,5 +1,7 @@
 package Review.Q5;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Consumer;
 
 /**
@@ -14,6 +16,11 @@ import java.util.function.Consumer;
  */
 public class EventHandler {
     //FIXME add members
+    private Map<String, Consumer<Event>> handlers;
+
+    public EventHandler() {
+        handlers = new HashMap<>();
+    }
 
     /**
      * Associates an event kind to an event handler function. If the
@@ -27,6 +34,7 @@ public class EventHandler {
      */
     public void registerEventHandlerFunction(String eventKind, Consumer<Event> handlerFunction) {
         // FIXME complete method
+        handlers.put(eventKind,handlerFunction);
     }
 
     /**
@@ -42,7 +50,8 @@ public class EventHandler {
      *         associated to the event kind.
      */
     public Consumer<Event> unregisterEventHandlerFunction(String eventKind) {
-        return null;  // FIXME complete method
+         // FIXME complete method
+        return handlers.remove(eventKind);
     }
 
     /**
@@ -57,6 +66,12 @@ public class EventHandler {
      *         false otherwise
      */
     public boolean handleEvent(Event event) {
-        return false; // FIXME complete method
+        // FIXME complete method
+        Consumer<Event> handler = handlers.get(event.kind());
+        if(handler != null){
+            handler.accept(event);
+            return true;
+        }
+        return false;
     }
 }

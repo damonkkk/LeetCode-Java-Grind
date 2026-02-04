@@ -1,5 +1,6 @@
 package Review.Q5;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +15,11 @@ import java.util.List;
  */
 public class EventsContainer {
     //FIXME add members
+    private List<Event> events;
+
+    public EventsContainer() {
+        events = new ArrayList<>();
+    }
 
     /**
      * Adds a new Event at the tail of the container.
@@ -21,7 +27,7 @@ public class EventsContainer {
      * @param event The event to be added to the container
      */
     public void addEvent(Event event) {
-        // FIXME complete method
+        events.add(event);
     }
 
     /**
@@ -32,7 +38,10 @@ public class EventsContainer {
      *               if the container is empty
      */
     public Event extractEvent() {
-        return null; // FIXME complete method
+     if(events.isEmpty()){
+         return null;
+     }
+     return events.remove(0);
     }
 
     /**
@@ -51,6 +60,21 @@ public class EventsContainer {
      *         list.
      */
     public List<Event> handleEvents(EventHandler eventHandler) {
-        return null; // FIXME complete method
+        List<Event> handledEvents = new ArrayList<>();
+        List<Event> remainingEvents = new ArrayList<>();
+
+        for(Event event: events){
+            if (eventHandler.handleEvent(event)) {
+                // Event was handled - add to handled list
+                handledEvents.add(event);
+            } else {
+                // Event could not be handled - keep it for later
+                remainingEvents.add(event);
+            }
+        }
+        // Replace events with only the remaining ones
+        events = remainingEvents;
+        return handledEvents;
+
     }
 }
