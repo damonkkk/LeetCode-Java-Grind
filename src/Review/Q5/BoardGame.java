@@ -1,4 +1,5 @@
 package Review.Q5;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -40,7 +41,11 @@ public class BoardGame {
      */
     @Override
     public int hashCode() {
-        return new Random().nextInt(2); // FIXME complete this method
+        int res = 7;
+        res =17* res +year;
+        res =17* res + (genre != null ? genre.hashCode() : 0);
+        res = 17* res+ (name != null ? name.hashCode() : 0);
+        return res;
     }
 
     /**
@@ -49,7 +54,16 @@ public class BoardGame {
      */
     @Override
     public boolean equals(Object object) {
-        return false; // FIXME complete this method
+        if(this == object){
+            return true;
+        }
+        if(object==null || getClass() != object.getClass()){
+            return false;
+        }
+        BoardGame a = (BoardGame) object;
+        return year == a.year &&
+                Objects.equals(genre, a.genre) &&  // Null-safe
+                Objects.equals(name, a.name);      // Null-safe
     }
 
     @Override
