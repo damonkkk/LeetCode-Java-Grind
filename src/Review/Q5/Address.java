@@ -36,8 +36,11 @@ public class Address {
      */
     @Override
     public int hashCode() {
-        // FIXME complete this method
-        return new Random().nextInt(2);
+        int res = 7;
+        res = 17* res+postCode;
+        res = 17*res +streetNumber;
+        res = 17*res +(streetName!= null ?streetName.hashCode():0);
+        return res;
     }
 
     /**
@@ -46,8 +49,17 @@ public class Address {
      */
     @Override
     public boolean equals(Object object) {
-        // FIXME complete this method
-        return false;
+        if(this== object){
+            return true;
+        }
+        if(object == null || getClass() != object.getClass()){
+            return false;
+        }
+        Address a= (Address) object;
+        return streetNumber == a.streetNumber &&
+                (streetName == null ? a.streetName == null : streetName.equals(a.streetName))
+                &&
+                postCode== a.postCode;
     }
 
     @Override
