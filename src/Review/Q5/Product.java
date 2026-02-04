@@ -36,6 +36,7 @@ public class Product {
         int result = 17;
         result = 31*result + name.hashCode();
         result = 31*result+category.hashCode();
+        result = 31*result + productID;
         return result;
     }
 
