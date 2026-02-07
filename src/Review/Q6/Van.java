@@ -1,0 +1,19 @@
+package Review.Q6;
+
+public abstract class Van extends Vehicle1{
+
+    public Van(ParkingZone zone, int parkingDuration,boolean isPeakTime){
+        super(zone,parkingDuration,isPeakTime);
+
+    }
+
+    @Override
+    public double calculateParkingFee(){
+        return zone.calculateFee(parkingDuration,isPeakTime);
+    }
+
+    @Override
+    public double getVehicleMultiplier(){
+        return calculateParkingFee() * 1.4;
+    }
+}
