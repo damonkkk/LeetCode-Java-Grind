@@ -17,8 +17,10 @@ public class totalRevenue {
     public static Map<String, Double> getRevenueByZone(List<Vehicle1> vehicles){
         Map<String, Double> map = new HashMap<>();
         for (Vehicle1 vehicle : vehicles) {
-            double fee = vehicle.zone.calculateFee(vehicle.parkingDuration, vehicle.isPeakTime);
-            map.put(vehicle.toString(),fee);
+            String zoneName = vehicle.zone.getClass().getSimpleName();
+            double fee = vehicle.calculateParkingFee();
+
+            map.put(zoneName, map.getOrDefault(zoneName, 0.0) + fee);
         }
         return map;
 

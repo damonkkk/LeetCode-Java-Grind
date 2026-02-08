@@ -3,7 +3,7 @@ package Review.Q6;
 public class ShortTermZone implements ParkingZone{
     @Override
     public double getHourlyRate() {
-        return 0;
+        return 5.0;
     }
 
     @Override

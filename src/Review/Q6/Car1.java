@@ -8,11 +8,11 @@ public class Car1 extends Vehicle1{
 
     @Override
     public double calculateParkingFee() {
-        return zone.calculateFee(parkingDuration,isPeakTime);
+        return zone.calculateFee(parkingDuration,isPeakTime) * getVehicleMultiplier();
     }
 
     @Override
     public double getVehicleMultiplier() {
-        return calculateParkingFee() * 1.0;
+        return  1.0;
     }
 }
