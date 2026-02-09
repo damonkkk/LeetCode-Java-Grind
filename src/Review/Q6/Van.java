@@ -1,6 +1,6 @@
 package Review.Q6;
 
-public abstract class Van extends Vehicle1{
+public class Van extends Vehicle1{
 
     public Van(ParkingZone zone, int parkingDuration,boolean isPeakTime){
         super(zone,parkingDuration,isPeakTime);

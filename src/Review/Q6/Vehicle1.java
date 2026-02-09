@@ -1,6 +1,6 @@
 package Review.Q6;
 
-abstract class Vehicle1 {
+public abstract class Vehicle1 {
     protected ParkingZone zone;
     protected  int parkingDuration;
     protected boolean isPeakTime;
