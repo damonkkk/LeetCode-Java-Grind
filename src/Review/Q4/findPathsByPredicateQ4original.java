@@ -13,49 +13,103 @@ import java.util.function.Predicate;
 ////Return: A List<List<TreeNode>> containing all valid paths.
 //
 public class findPathsByPredicateQ4original {
+
     public List<List<TreeNode>> findPathsByPredicate(TreeNode root, Predicate<TreeNode> condition){
         List<List<TreeNode>> result = new ArrayList<>();
-
         List<TreeNode> currentPath = new ArrayList<>();
-
         if(root==null){
             return result;
         }
-
-        findPaths(root,currentPath,condition,result);
+        findPaths(root, currentPath, condition, result);
 
         return result;
     }
+
+
 
     private void findPaths(TreeNode node, List<TreeNode> currentPath, Predicate<TreeNode> condition, List<List<TreeNode>> result){
 
         currentPath.add(node);
 
-        if(node.left == null && node.right==null){
-
-            if(isValidPath(currentPath, condition)){
-                result.add(new ArrayList<>(currentPath));
-            }
-        } else {
-
-            if(node.left != null){
-                findPaths(node.left,currentPath,condition,result);
-            }
-            if(node.right != null){
-                findPaths(node.right,currentPath,condition,result);
-            }
+        if(node.right == null && node.left == null ){
+          if(isValidPath(currentPath,condition)){
+              result.add(new ArrayList<>(currentPath));
+          }
         }
-        currentPath.remove(currentPath.size() - 1);
+
+        if(node.left != null){
+            findPaths(node.left,currentPath,condition,result);
+        }
+
+        if(node.right!=null){
+            findPaths(node.right,currentPath,condition,result);
+        }
+
+        currentPath.remove(currentPath.size()-1);
+
+
+
+
+
     }
 
+
+
+
     private boolean isValidPath(List<TreeNode> path, Predicate<TreeNode> condition){
-        for(TreeNode node: path){
+
+        for(TreeNode node:path){
             if(!condition.test(node)){
                 return false;
             }
         }
         return true;
     }
+
+
+//    public List<List<TreeNode>> findPathsByPredicate(TreeNode root, Predicate<TreeNode> condition){
+//        List<List<TreeNode>> result = new ArrayList<>();
+//
+//        List<TreeNode> currentPath = new ArrayList<>();
+//
+//        if(root==null){
+//            return result;
+//        }
+//
+//        findPaths(root,currentPath,condition,result);
+//
+//        return result;
+//    }
+//
+//    private void findPaths(TreeNode node, List<TreeNode> currentPath, Predicate<TreeNode> condition, List<List<TreeNode>> result){
+//
+//        currentPath.add(node);
+//
+//        if(node.left == null && node.right==null){
+//
+//            if(isValidPath(currentPath, condition)){
+//                result.add(new ArrayList<>(currentPath));
+//            }
+//        } else {
+//
+//            if(node.left != null){
+//                findPaths(node.left,currentPath,condition,result);
+//            }
+//            if(node.right != null){
+//                findPaths(node.right,currentPath,condition,result);
+//            }
+//        }
+//        currentPath.remove(currentPath.size() - 1);
+//    }
+//
+//    private boolean isValidPath(List<TreeNode> path, Predicate<TreeNode> condition){
+//        for(TreeNode node: path){
+//            if(!condition.test(node)){
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Review.Q7;
+package Review.Q7.BinaryTree;
 
 public class IsPresent {
 

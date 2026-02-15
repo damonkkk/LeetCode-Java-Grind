@@ -1,5 +1,4 @@
-package Review.Q7;
-import java.util.Queue;
+package Review.Q7.BinaryTree;
 
 /**
  * A recursive data-type representing a binary tree.

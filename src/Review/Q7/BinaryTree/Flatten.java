@@ -1,4 +1,4 @@
-package Review.Q7;
+package Review.Q7.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
