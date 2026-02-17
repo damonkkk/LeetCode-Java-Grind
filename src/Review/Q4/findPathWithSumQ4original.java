@@ -35,7 +35,7 @@ public class findPathWithSumQ4original {
         targetSum-=node.val;
 
 
-        if(node.right == null && node.left == null && targetSum==node.val){
+        if(node.right == null && node.left == null && targetSum==0){
             return true;
         }
 

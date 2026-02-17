@@ -46,6 +46,7 @@ public class BoardGame {
         res =17* res + (genre != null ? genre.hashCode() : 0);
         res = 17* res+ (name != null ? name.hashCode() : 0);
         return res;
+
     }
 
     /**

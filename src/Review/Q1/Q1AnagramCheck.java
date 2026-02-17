@@ -86,8 +86,13 @@ public class Q1AnagramCheck {
         }
 
         // 3. 第三步：最后检查是否所有值都回到了 0
-        for (int count : map.values()) {
-            if (count != 0) {
+//        for (int count : map.values()) {
+//            if (count != 0) {
+//                return false;
+//            }
+//        }
+        for(var entry: map.entrySet()){
+            if (entry.getValue()!=0){
                 return false;
             }
         }
