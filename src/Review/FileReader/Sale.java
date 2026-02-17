@@ -1,4 +1,4 @@
-package FileReader;
+package Review.FileReader;
 
 public class Sale {
 
