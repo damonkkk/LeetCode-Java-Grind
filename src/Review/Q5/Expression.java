@@ -52,7 +52,7 @@ class Constant extends Expression {
         }
         Constant a = (Constant) other;
         return value==a.value;
-    }
+}
     @Override
     public int hashCode() {
         // for an object that is defined by a single integer the simplest and best hash code is the integer value itself.
